@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Trip</title>
+</head>
+<body>
+
+<h1>EZ Itinerary</h1>
+<h2>Create a Trip</h2>
+<n></n>
+
+<!--<form action="/success" method="GET">-->
+
+    
+<form action="/success" method="GET">
+    <div class="form-group">
+        <label for="trip_name">Trip Name (Unique):</label>
+        <input type="text" id="trip_name" name="trip_name"><br>
+    </div>
+
+
+    <div class="form-group">
+        <label class="sr-only" for="group_name">Please Select your Group Name (if not shown, go back and create a group):</label>
+        <select id="group_name" name="group_name">
+            {% for travel_group in travel_groups %}
+                <option value="{{travel_group}}" SELECTED>{{travel_group}}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+
+    <div class="form-group">
+        <label for="start_date">Start Date (YYYY-MM-DD):</label>
+        <input type="text" id="start_date" name="start_date"><br>
+    </div>
+
+    <div class="form-group">
+        <label for="end_date">End Date (YYYY-MM-DD):</label>
+        <input type="text" id="end_date" name="end_date"><br>
+    </div>
+
+    <div class="form-group">
+        <label class="sr-only" for="excursion">Please Select an Excursion</label>
+        <select id="excursion" name="excursion">
+            {% for excursion in excursions %}
+                <option value="{{excursion}}" SELECTED>{{excursion}}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label class="sr-only" for="restaurant">Please Select a Restaurant</label>
+        <select id="restaurant" name="restaurant">
+            {% for restaurant in restaurants %}
+                <option value="{{restaurant}}" SELECTED>{{restaurant}}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label class="sr-only" for="hotel">Please Select a Hotel</label>
+        <select id="hotel" name="hotel">
+<!--            <option value="default" selected disabled hidden>Select a hotel.</option>-->
+            {% for hotel in hotels %}
+                <option value="{{hotel}}" SELECTED>{{hotel}}</option>
+            {% endfor %}
+        </select>
+    </div>
+<input type = "submit">
+</form>
+
+
+
+</body>
+</html>

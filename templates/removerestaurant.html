@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Remove Restaurant</title>
+</head>
+<h1>EZ Itinerary</h1>
+<h2>Remove Restaurant </h2>
+<body>
+
+<form action="/removerestaurant/removerestaurantsuccess" method="GET">
+
+    <div class="form-group">
+        <label for="trip_name">Trip Name:</label>
+        <input type="text" id="trip_name" name="trip_name" value ="{{trip}}"><br>
+    </div>
+
+
+    <div class="form-group">
+        <label class="sr-only" for="restaurant">Please Select a Restaurant:</label>
+        <select id="restaurant" name="restaurant">
+<!--            <option value="default" selected disabled hidden>Select a hotel.</option>-->
+            {% for restaurant in restaurants %}
+                <option value="{{restaurant}}" SELECTED>{{restaurant}}</option>
+            {% endfor %}
+        </select>
+    </div>
+<input type = "submit">
+</form>
+
+    
+    
+</body>
+</html>    

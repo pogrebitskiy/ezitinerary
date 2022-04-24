@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View a Groups</title>
+</head>
+<body>
+<h1>EZ Itinerary</h1>
+<h2>View a Group</h2>
+
+<form action="/group" method="GET">
+    <div class="form-group">
+        <label class="sr-only" for="group">Please Select a Group</label>
+        <select id="group" name="group">
+            {% for group in results %}
+                <option value="{{group}}" SELECTED>{{group}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <input type = "submit">
+</form>
+
+</body>
+</html>

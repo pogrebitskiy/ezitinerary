@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>{{name}}'s Excursion(s)</h3>
+<table border="1" cellpadding="5" cellspacing="5">
+    <tr>
+        {% for head in excursionHeaders %}
+            <th>{{ head }}</th>
+        {% endfor %}
+    </tr>
+    {% for row in tripExcursions %}
+        <tr>
+            {% for d in row %}
+                <td>{{ d }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+
+<h3>{{name}}'s Hotel(s)</h3>
+<table border="1" cellpadding="5" cellspacing="5">
+    <tr>
+        {% for head in hotelHeaders %}
+            <th>{{ head }}</th>
+        {% endfor %}
+    </tr>
+    {% for row in tripHotels %}
+        <tr>
+            {% for d in row %}
+                <td>{{ d }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+
+<h3>{{name}}'s Restaurant(s)</h3>
+<table border="1" cellpadding="5" cellspacing="5">
+    <tr>
+        {% for head in restaurantHeaders %}
+            <th>{{ head }}</th>
+        {% endfor %}
+    </tr>
+    {% for row in tripRestaurants %}
+        <tr>
+            {% for d in row %}
+                <td>{{ d }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

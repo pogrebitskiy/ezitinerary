@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View All Groups</title>
+</head>
+<body>
+<h1>EZ Itinerary</h1>
+<h2>View Groups </h2>
+<table border="1" cellpadding="5" cellspacing="5">
+    <tr>
+        {% for head in headers %}
+            <th>{{ head }}</th>
+        {% endfor %}
+    </tr>
+    {% for row in results %}
+        <tr>
+            {% for d in row %}
+                <td>{{ d }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

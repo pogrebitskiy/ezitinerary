@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Restaurants</title>
+</head>
+<h1>EZ Itinerary</h1>
+<h2>Edit Restaurants </h2>
+<body>
+
+<form action="/addrestaurant" method="GET">
+    <div class="form-group">
+        <label class="sr-only" for="trip">Please Select a Trip to edit</label>
+        <select id="trip" name="trip">
+            {% for trip in results %}
+                <option value="{{trip}}" SELECTED>{{trip}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <button type = "submit">Add Restuarant</button>
+    <button type= "submit" formaction="/removerestaurant">Remove Restaurant</button>
+</form>
+
+</body>
+</html>

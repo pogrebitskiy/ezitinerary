@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Delete a Group</title>
+</head>
+<body>
+
+<h1>EZ Itinerary</h1>
+<h2>Delete a Group</h2>
+<n></n>
+
+<form action = "/deletegroupsuccess" method="GET">
+
+    <div class="form-group">
+        <label class="sr-only" for="group_name">Please Select your Group Name to delete:</label>
+        <select id="group_name" name="group_name">
+            {% for travel_group in travel_groups %}
+                <option value="{{travel_group}}" SELECTED>{{travel_group}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    
+<input type ="submit">
+</form>
+
+
+</body>
+</html> 

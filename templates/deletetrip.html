@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Delete a Trip</title>
+</head>
+<body>
+
+<h1>EZ Itinerary</h1>
+<h2>Delete a Trip</h2>
+<n></n>
+
+<form action = "/deletetripsuccess" method="GET">
+
+    <div class="form-group">
+        <label class="sr-only" for="trip_name">Please Select your Trip Name to delete:</label>
+        <select id="trip_name" name="trip_name">
+            {% for trip in trips %}
+                <option value="{{trip}}" SELECTED>{{trip}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    
+<input type ="submit">
+</form>
+
+
+</body>
+</html> 
