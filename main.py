@@ -24,38 +24,47 @@ def account():
 def trips():
     return render_template('mytrips.html')
 
-@app.route('/editgroup/')
+@app.route('/editgroup/', methods=['GET', 'POST'])
 def editGroup():
-    return render_template('editgroup.html')
+    conn = mysql.connect()
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT group_name FROM travel_group")
+    groups = cursor.fetchall()
+    groups = [row[0] for row in groups]
+
+    return render_template('editgroup.html', groups = groups)
 
 @app.route('/addmember/', methods=['GET', 'POST'])
 def addmember():
     conn = mysql.connect()
     cursor = conn.cursor()
 
-    cursor.execute("SELECT group_name FROM travel_group")
-    groups = cursor.fetchall()
-    groups = [row[0] for row in groups]
+    group_name = request.args['group']
 
     cursor.close()
     conn.close()
 
 
-    return render_template('addmember.html', travel_groups =groups)
+    return render_template('addmember.html', group_name = group_name)
 
 @app.route('/removemember', methods=['GET', 'POST'])
 def removemember():
     conn = mysql.connect()
     cursor = conn.cursor()
 
-    cursor.execute("SELECT group_name FROM travel_group")
-    groups = cursor.fetchall()
-    groups = [row[0] for row in groups]
+    group_name = request.args['group']
+
+    sql = f'CALL view_group_members("{group_name}")'
+    cursor.execute(sql)
+    members = cursor.fetchall()
+    members = [row[1] for row in members]
+
 
     cursor.close()
     conn.close()
 
-    return render_template('removemember.html', travel_groups = groups)
+    return render_template('removemember.html', group_name = group_name, members = members)
 
 @app.route('/removesuccess', methods=['GET', 'POST'])
 def removesuccess():
@@ -154,24 +163,12 @@ def viewGroups():
 
     return render_template('viewGroups.html', results=results, headers=headers)
 
-@app.route('/deletegroup', methods=['GET', 'POST'])
-def deletegroup():
-    conn = mysql.connect()
-    cursor = conn.cursor()
-
-    cursor.execute("SELECT group_name FROM travel_group")
-    groups = cursor.fetchall()
-    groups = [row[0] for row in groups]
-
-    cursor.close()
-    conn.close()
-    return render_template('deletegroup.html', travel_groups = groups)
 
 @app.route('/deletegroupsuccess')
 def deletegroupsuccess():
     conn = mysql.connect()
     cursor = conn.cursor()
-    group_name = request.args['group_name']
+    group_name = request.args['group']
     sql = f'CALL delete_group("{group_name}")'
     cursor.execute(sql)
     conn.commit()

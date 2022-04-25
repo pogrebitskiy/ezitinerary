@@ -2,17 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Edit Groupp</title>
+    <title>Edit Group</title>
 </head>
-<body>
-
 <h1>EZ Itinerary</h1>
 <h2>Edit Group</h2>
-<n></n>
-<p><a href="/addmember">Add Member</a></p>
-<n></n>
-<p><a href="/removemember">Remove Member</a></p>
-<n></n>
-<p><a href="/deletegroup">Delete a Group</a></p>
+<body>
+
+
+<form action="/addmember" method="GET">
+    <div class="form-group">
+        <label class="sr-only" for="trip">Please Select a Group to edit (if not shown, go back and create a group)</label>
+        <select id="group" name="group">
+            {% for group in groups %}
+                <option value="{{group}}" SELECTED>{{group}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <button type = "submit">Add Member</button>
+    <button type= "submit" formaction="/removemember">Remove Member</button>
+    <button type= "submit" formaction="/deletegroupsuccess"> Delete Group</button>
+</form>
+
+
 </body>
 </html>

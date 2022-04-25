@@ -13,12 +13,8 @@
 <form action = "/addsuccess" method="GET">
 
     <div class="form-group">
-        <label class="sr-only" for="group_name">Please Select your Group Name (if not shown, go back and create a group):</label>
-        <select id="group_name" name="group_name">
-            {% for travel_group in travel_groups %}
-                <option value="{{travel_group}}" SELECTED>{{travel_group}}</option>
-            {% endfor %}
-        </select>
+        <label for="group_name">Group Name:</label>
+        <input type="text" id="group_name" name="group_name" value ="{{group_name}}"><br>
     </div>
     
     <div class="form-group">

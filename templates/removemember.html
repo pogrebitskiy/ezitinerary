@@ -13,17 +13,18 @@
 <form action = "/removesuccess" method="GET">
 
     <div class="form-group">
-        <label class="sr-only" for="group_name">Please Select your Group Name (if not shown, go back and create a group):</label>
-        <select id="group_name" name="group_name">
-            {% for travel_group in travel_groups %}
-                <option value="{{travel_group}}" SELECTED>{{travel_group}}</option>
-            {% endfor %}
-        </select>
+        <label for="group_name">Group Name:</label>
+        <input type="text" id="group_name" name="group_name" value ="{{group_name}}"><br>
     </div>
     
+    
     <div class="form-group">
-        <label for="member_name">Member Name:</label>
-        <input type="text" id="member_name" name="member_name"><br>
+        <label class="sr-only" for="member">Please Select a Member to remove:</label>
+        <select id="member" name="member">
+            {% for member in members %}
+                <option value="{{member}}" SELECTED>{{member}}</option>
+            {% endfor %}
+        </select>
     </div>
 
     <div class="form-group">
