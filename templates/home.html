@@ -3,12 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Home Page</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
 </head>
+<center>
 <body>
 <h1>EZ Itinerary</h1>
 <n></n>
-<p><a href="/myaccount">My Account</a></p>
+<p><a href="/myaccount">
+    <button class="button">
+        Groups
+    </button>
+</a></p>
 <n></n>
-<p><a href="/mytrips">My Trips</a></p>
+<p><a href="/mytrips">
+    <button class="button">
+        Trips
+    </button>
+</a></p>
+</center>
 </body>
 </html>

@@ -3,15 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>My Trips</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
 </head>
 <body>
 <h1>EZ Itinerary</h1>
-<h2>My Trips</h2>
+<h2>Trips</h2>
 
-<p><a href="/createtrip">Create Trip</a></p>
+<p><a href="/createtrip">
+    <button class="button">
+        Create a Trip
+    </button>
+</a></p>
 <n></n>
-<p><a href="/edittrip">Edit an Existing Trip</a></p>
+<p><a href="/edittrip">
+    <button class="button">
+        Edit an Existing Trip
+    </button>
+</a></p>
 <n></n>
-<p><a href="/viewTrip">View A Trip</a></p>
+<p><a href="/viewTrip">
+    <button class="button">
+        View a Trip
+    </button>
+</a></p>
 </body>
 </html>

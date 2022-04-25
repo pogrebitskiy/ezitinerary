@@ -3,17 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit Trips</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
 </head>
 <body>
 <h1>EZ Itinerary</h1>
 <h2>Edit a Trip</h2>
 <n></n>
-<p><a href="/deletetrip">Delete a Trip</a></p>
+<p><a href="/deletetrip">
+    <button class="button">
+        Delete a Trip
+    </button>
+</a></p>
 <n></n>
-<p><a href="/edithotels">Edit a Trip's Hotels</a></p>
+<p><a href="/edithotels">
+    <button class="button">
+        Edit a Trip's Hotels
+    </button>
+</a></p>
 <n></n>
-<p><a href="/editrestaurants">Edit a Trip's Restaurants</a></p>
+<p><a href="/editrestaurants">
+    <button class="button">
+        Edit a Trip's Restaurants
+    </button>
+</a></p>
 <n></n>
-<p><a href="/editexcursions">Edit a Trip's Excursions</a></p>
+<p><a href="/editexcursions">
+    <button class="button">
+        Edit a Trip's Excursions
+    </button>
+
+</a></p>
 </body>
 </html>

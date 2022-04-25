@@ -3,18 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>My Account</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
 </head>
 <body>
 <h1>EZ Itinerary</h1>
-<h2>My Account</h2>
+<h2>Groups</h2>
 
-<p><a href="/editgroup">Edit A Group</a></p>
+<p><a href="/editgroup">
+    <button class="button">
+        Edit a Group
+    </button>
+</a></p>
 <n></n>
-<p><a href="/creategroup">Create A Group</a></p>
+<p><a href="/creategroup">
+    <button class="button">
+        Create a Group
+    </button>
+</a></p>
 <n></n>
-<p><a href="/viewagroup">View A Group</a> </p>
+<p><a href="/viewagroup">
+    <button class="button">
+        View a Group
+    </button>
+</a> </p>
 <n></n>
-<p><a href="/viewgroups">View All Groups</a> </p>
+<p><a href="/viewgroups">
+    <button class="button">
+        View All Groups
+    </button>
+</a> </p>
 <n></n>
 </body>
 </html>
