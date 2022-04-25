@@ -75,6 +75,7 @@ select {
     padding:5px; 
     border:2px solid #ccc; 
     -webkit-border-radius: 5px;
+    font-size: 17px;
     border-radius: 5px;
 }
 
@@ -88,5 +89,6 @@ input[type=submit], button {
     border:0 none;
     cursor:pointer;
     -webkit-border-radius: 5px;
+    font-size: 17px;
     border-radius: 5px; 
 }
