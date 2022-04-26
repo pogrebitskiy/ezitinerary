@@ -1,7 +1,7 @@
 # EZ Itinerary
 
 ## Directions:
-1. cd into the "ezitinerary" directory
+1. cd into the "ezitinerary-main" directory
 2. RUN: pip install flask-mysql
 3. RUN: pip install flask
 4. RUN: export FLASK_APP=main.py
